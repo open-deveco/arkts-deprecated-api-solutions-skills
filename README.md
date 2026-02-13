@@ -1,10 +1,10 @@
-# HarmonyOS 已废弃 API 迁移解决方案库
+# HarmonyOS 废弃 API 迁移解决方案Skills
 
 > 专为 AI 辅助开发 HarmonyOS 应用设计的已废弃 API 迁移指南和现代替代方案
 
 ## 📖 项目背景
 
-在使用 AI 模型（如Claude、Gemini、GLM 等）开发 HarmonyOS 应用时，我们发现了一个严重的问题：
+在使用 AI 模型（如Claude、Gemini、GLM 等）开发 HarmonyOS 应用时，我们发现了一个问题：
 
 - **AI 模型经常生成 API 11+ 之后已被弃用的 API**
 - **AI 模型不了解 HarmonyOS API 的演进历史**，生成的代码使用了过时的 API
@@ -18,7 +18,7 @@
 - `featureAbility` 而不是 `UIAbilityContext`
 - 等等...
 
-为了解决这个问题，我们开发了这个 **已废弃 API 迁移解决方案Skills**，旨在：
+为了解决这个问题，我们开发了这个 **废弃 API 迁移解决方案Skills**，旨在：
 
 ✅ **提高 AI 开发效率** - 让 AI 模型能够自动使用现代 API  
 ✅ **减少迁移工作** - 避免反复将旧 API 迁移到新 API  
@@ -26,7 +26,7 @@
 
 ## 🎯 项目目标
 
-本Skills收集并整理了 **51+ 个已废弃的 HarmonyOS API**，每个 API 都包含：
+本Skills收集并整理了 **51+ 个废弃的 HarmonyOS API**，每个 API 都包含：
 
 - 📝 旧 API 的用法说明
 - ✅ 现代替代 API 的用法
@@ -96,10 +96,10 @@ deprecated_api_solutions/
 
 ### 问题场景
 
-AI 生成代码时经常使用已废弃的 API：
+AI 生成代码时经常使用废弃的 API：
 
 ```typescript
-// ❌ AI 经常生成的已废弃代码
+// ❌ AI 经常生成的废弃代码
 import router from '@ohos.router';
 import promptAction from '@ohos.promptAction';
 
@@ -200,7 +200,7 @@ struct MyComponent {
 
 欢迎提交 Issue 和 Pull Request！
 
-如果你发现了新的已废弃 API，或者有更好的迁移方案，欢迎贡献：
+如果你发现了新的废弃 API，或者有更好的迁移方案，欢迎贡献：
 
 1. Fork 本仓库
 2. 创建你的特性分支 (`git checkout -b feature/AmazingMigration`)
