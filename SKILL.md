@@ -18,6 +18,7 @@ This skill provides guidance on migrating from deprecated or discouraged APIs to
 | `decodeToString` | `string` utilities | `util.TextDecoder` |
 | `showToast` | `promptAction.showToast` (Global) | `this.getUIContext().getPromptAction().showToast(...)` |
 | `getHostContext` | Global context access | `this.getUIContext().getHostContext()` |
+| `getContext` | `getContext(this)` | `this.getUIContext().getHostContext()` with context parameter |
 | `px2vp` | Global `px2vp` | `this.getUIContext().px2vp(...)` |
 | `getRouter` | `@ohos.router` | `this.getUIContext().getRouter()` |
 | `back` | `router.back()` | `this.getUIContext().getRouter().back()` |
@@ -49,10 +50,14 @@ This skill provides guidance on migrating from deprecated or discouraged APIs to
 | `globalThis` | Global context access | Use `UIContext`, `AppStorage`, or `LocalStorage` |
 | `AppStorage.watch()` | Manual watch method | Use `@StorageLink` or `@StorageProp` decorators |
 | `Configuration.densityDpi` | Screen density property | Use `display.getDefaultDisplaySync()` or `WindowProperties` |
+| `TouchEvent` | Old API (touchPoint, pressure, tiltX/tiltY) | Use `event.touches`, `event.source` |
+| `SideBarContainer` | Old API with boolean parameter | Use conditional layout instead |
+| `SwiperItem` | Deprecated component | Use direct child components |
 
 ## Usage
 
 ### Detailed Migration Guides
+- [getContext Migration](./reference/getcontext_migration.md)
 - [Application Framework Migration (featureAbility, window, FaultLogger, hilog)](./reference/framework_migration.md)
 - [UI Context Migration (animateTo, router, prompt, matchMediaSync, scroll)](./reference/ui_context_migration.md)
 - [System Capabilities Migration (fileio, backgroundTask, window, display, notification)](./reference/system_migration.md)
@@ -64,8 +69,12 @@ This skill provides guidance on migrating from deprecated or discouraged APIs to
 - [globalThis Migration](./reference/globalthis_migration.md)
 - [AppStorage watch Migration](./reference/appstorage_watch_migration.md)
 - [Configuration densityDpi Migration](./reference/configuration_density_migration.md)
+- [KeyEvent CtrlKey Migration](./reference/keyevent_ctrlkey_errors.md)
+- [TouchEvent API Changes](./reference/touch_event_api_changes.md)
+- [SideBarContainer API Changes](./reference/sidebarcontainer_api_changes.md)
 
 ### Code Examples
+- [getContext Replacement](./assets/GetContextReplacement.ets)
 - [Ability Migration](./assets/AbilityMigration.ets)
 - [Animation Replacement](./assets/AnimationReplacement.ets)
 - [Background Migration](./assets/BackgroundMigration.ets)
@@ -91,5 +100,8 @@ This skill provides guidance on migrating from deprecated or discouraged APIs to
 - [GlobalThis Replacement](./assets/GlobalThisReplacement.ets)
 - [AppStorage Watch Replacement](./assets/AppStorageWatchReplacement.ets)
 - [Configuration Density Replacement](./assets/ConfigurationDensityReplacement.ets)
+- [KeyEvent CtrlKey Replacement](./assets/KeyEventCtrlKeyError.ets)
+- [TouchEvent API Demo](./assets/TouchEventAPIDemo.ets)
+- [SideBarContainer API Demo](./assets/SideBarContainerAPIDemo.ets)
 
 Refer to the documentation links above for detailed steps.
